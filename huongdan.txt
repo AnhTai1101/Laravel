@@ -1,0 +1,11 @@
+- Đường dẫn tới test api: api/demo
+- Tạo một nguồn cung cấp api ta dùng: php artisan make:resource Name
+- trong class Name
+    - hàm toArray ta cho return
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+        ];
+    - Sau đó vào DemoController:
+    - Để lấy route trong dự án ta dùng câu lệnh: php artisan route:list
+        - Xem để ta có thể dễ dàng thao tác với các route
