@@ -4,9 +4,22 @@ namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Users;
 
 class NewController extends Controller
 {
+    // tạo 1 biến để class làm việc
+    protected $users;
+    // Và biến này chỉ được sử dụng trong class này
+    /**
+     * Class constructor.
+     */
+    // Mỗi khi gọi tới class này thì sẽ chạy function này đầu tiên
+    // function này sẽ gửi dữ liệu tới biến user
+    public function __construct(Users $user) // gắn class Users thành biến user
+    {
+        $this->users = $user;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,10 @@ class NewController extends Controller
      */
     public function index()
     {
-        echo 'Hello Word';
+        // khoi tao bien user gọi class Users
+        $user = $this->users->getAllListUser();
+        // xuất biến ra
+        return response()->json(['User'=>$user]);
     }
 
     /**

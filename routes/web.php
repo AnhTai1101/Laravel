@@ -18,3 +18,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('demo1', 'Demo1Controller@home');
 });
 Route::get('demo2', 'DemoController@home');
+Route::get('pass', function () {
+    echo bcrypt('123456');
+});
+Route::view('api/new', 'backend.edit');

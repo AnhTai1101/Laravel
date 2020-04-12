@@ -1,4 +1,6 @@
+- .env edit database Name
 - Đường dẫn tới test api: api/demo
+
 - Tạo một nguồn cung cấp api ta dùng: php artisan make:resource Name
 - trong class Name
     - hàm toArray ta cho return
@@ -9,3 +11,20 @@
     - Sau đó vào DemoController:
     - Để lấy route trong dự án ta dùng câu lệnh: php artisan route:list
         - Xem để ta có thể dễ dàng thao tác với các route
+- Migration: Xây dự cấu trúc bảng:
+    - Cú pháp tạo Migration:
+        - php artisan make:migration create_users_table
+- Seeder: 
+    - Cú pháp tạo Seeder: php artisan make:seed tên
+    - Cú pháp chạy:
+        - Tất cả seed: php artisan db:seed
+        - 1 class: php artisan db:seed --class=tên_class
+- Trong file api ta sẽ tạo biến Protected ( chỉ kết thừa trong class) và tạo hàm __construct để truyền biến user để mỗi khi gọi tới class sẽ có sẵn biến user và dữ liệu
+- Trong model user ta tạo hàm xuất toàn bộ danh sách các user
+- Tạo file ajax để load các dữ liệu được gửi về từ serve
+    ->public/backend1/js/new.js
+    - Sau đó phải thêm thẻ meta vào trong html
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+- Ta thường sẽ chạy lệnh php artisan route:list để lấy ra tất cả các route có trong project đễ có thể dễ dàng sử dụng.
+- Để load 1 view cho api ta tạo một route trong web.php 
+    route::view('tên đường dẫn','đường dẫn tới view')
