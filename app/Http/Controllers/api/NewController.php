@@ -31,6 +31,7 @@ class NewController extends Controller
         $user = $this->users->getAllListUser();
         // xuất biến ra
         return response()->json(['User'=>$user]);
+        // return response()->json(["name"=> "anh"]);
     }
 
     /**

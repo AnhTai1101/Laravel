@@ -21,4 +21,5 @@ Route::get('demo2', 'DemoController@home');
 Route::get('pass', function () {
     echo bcrypt('123456');
 });
-Route::view('api/new', 'backend.edit');
+// Route::view('api/new', 'backend.edit');
+Route::get('name1', 'LoadController@loadView');

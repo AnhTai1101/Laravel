@@ -26,5 +26,16 @@
     - Sau đó phải thêm thẻ meta vào trong html
         <meta name="csrf-token" content="{{ csrf_token() }}">
 - Ta thường sẽ chạy lệnh php artisan route:list để lấy ra tất cả các route có trong project đễ có thể dễ dàng sử dụng.
-- Để load 1 view cho api ta tạo một route trong web.php 
+- Để load 1 view cho api ta tạo một route trong web.php  -> cái này không nên dùng vì dễ sinh lỗi
     route::view('tên đường dẫn','đường dẫn tới view')
+    - Ta nên tạo 1 route get khác.
+    sau đó dùng ajax load lại vẫn hơn
+- Model: 
+    - Để lấy những cột cần thiết trong table ta dùng cấu trúc 
+        - protected $visible = [
+        'email','name'
+        ];
+    Đặt nó trong model
+- Login 
+    - Laravel Passport: cài đặt composer require laravel/passport
+    - 
